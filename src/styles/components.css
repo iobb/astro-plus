@@ -292,8 +292,98 @@
 }
 
 /* 表格样式 */
+/* 表格容器样式 - 防止溢出并添加滚动条 */
+.prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 0.375rem;
+  border: 1px solid var(--color-border, #e5e7eb);
+  background-color: rgb(255, 255, 255);
+}
+
+.prose table::-webkit-scrollbar {
+  height: 8px;
+}
+
+.prose table::-webkit-scrollbar-track {
+  background: rgb(243, 244, 246);
+  border-radius: 4px;
+}
+
+.prose table::-webkit-scrollbar-thumb {
+  background: rgb(156, 163, 175);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.prose table::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 114, 128);
+}
+
+.prose thead {
+  background-color: rgb(249, 250, 251);
+}
+
+.prose thead th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: rgb(17, 24, 39);
+  border-bottom: 2px solid var(--color-border, #e5e7eb);
+  border-right: 1px solid var(--color-border, #e5e7eb);
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.prose thead th:last-child {
+  border-right: none;
+}
+
+.prose tbody td {
+  padding: 0.75rem 1rem;
+  color: rgb(55, 65, 81);
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+  border-right: 1px solid var(--color-border, #e5e7eb);
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.prose tbody td:last-child {
+  border-right: none;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr:hover {
+  background-color: rgb(249, 250, 251);
+}
+
+/* 暗色模式表格样式 */
 .dark .prose table {
-  color: rgb(209, 213, 219);
+  border-color: var(--color-border-dark);
+  background-color: var(--color-bg-dark, rgb(17, 24, 39));
+}
+
+.dark .prose table::-webkit-scrollbar-track {
+  background: rgb(31, 41, 55);
+}
+
+.dark .prose table::-webkit-scrollbar-thumb {
+  background: rgb(75, 85, 99);
+}
+
+.dark .prose table::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 114, 128);
+}
+
+.dark .prose thead {
+  background-color: rgb(31, 41, 55);
 }
 
 .dark .prose thead th {
@@ -306,8 +396,37 @@
   border-color: var(--color-border-dark);
 }
 
-.dark .prose tbody tr {
-  border-color: var(--color-border-dark);
+.dark .prose tbody tr:hover {
+  background-color: rgb(31, 41, 55);
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .prose table {
+    font-size: 0.875rem;
+  }
+  
+  .prose thead th,
+  .prose tbody td {
+    padding: 0.5rem 0.75rem;
+    min-width: 100px;
+  }
+  
+  .prose table::-webkit-scrollbar {
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prose table {
+    font-size: 0.8rem;
+  }
+  
+  .prose thead th,
+  .prose tbody td {
+    padding: 0.4rem 0.6rem;
+    min-width: 80px;
+  }
 }
 
 /* 文本样式 */
