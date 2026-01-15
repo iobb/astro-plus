@@ -16,9 +16,9 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   site: "https://blog.nll.de5.net/", // 您的网站 URL
-  title: "blog",
-  slogan: "blog.nll.de5.net",
-  description: "在这里写描述",
+  title: "BG - Blog's",
+  slogan: "红尘滚滚,天机渺渺.",
+  description: "blog.nn.de5.net",
   social: {
     // 原版集成的一些联系方式, 不需要则留空
     github: "https://github.com/username",
