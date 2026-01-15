@@ -22,8 +22,8 @@ export const siteConfig: SiteConfig = {
   social: {
     // 原版集成的一些联系方式, 不需要则留空
     github: "https://github.com/username",
-    linkedin: "https://www.linkedin.com/in/username",
     email: "your@email.com",
+    linkedin: "https://www.linkedin.com/in/username",
   },
   homepage: {
     maxPosts: 5, // 主页显示的最大文章数量
